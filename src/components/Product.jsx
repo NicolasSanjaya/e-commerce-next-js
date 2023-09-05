@@ -153,10 +153,10 @@ const Product = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-center items-center p-6">
-      <div className="flex flex-wrap justify-center items-center">{rendering()}</div>
+    <div className=" p-6">
+      <div className="flex flex-wrap justify-center items-center relative">{rendering()}</div>
       {setCat === "" && (
-        <div className="flex">
+        <div className="flex justify-center">
           <ul className="flex">
             <li>
               <a href="" onClick={prevPage}>
