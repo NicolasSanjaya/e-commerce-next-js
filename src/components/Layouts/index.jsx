@@ -10,15 +10,15 @@ const Layout = ({ children }) => {
   const getTotalQuantity = () => {
     let total = 0;
     cart.forEach((item) => {
-      total += item.cartQuantity
-    })
-    return total
-  }
+      total += item.cartQuantity;
+    });
+    return total;
+  };
 
   return (
     <div>
-      <div className="fixed w-16 h-16 rounded-full bg-amber-300 flex justify-center items-center right-5 bottom-5">
-        <button onClick={() => router.push("/cart")}>
+      <div className="fixed w-16 h-16 rounded-full bg-amber-300 flex justify-center items-center right-5 bottom-5 z-50" onClick={() => router.push("/cart")}>
+        <button>
           <span className="fixed w-6 h-6 rounded-full bg-white right-12 z-50 bottom-14">{getTotalQuantity() || 0}</span>
           <AiOutlineShoppingCart className="scale-150" />
         </button>
