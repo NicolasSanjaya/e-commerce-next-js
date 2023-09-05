@@ -155,27 +155,29 @@ const Product = () => {
   return (
     <div className="flex flex-wrap justify-center items-center p-6">
       <div className="flex flex-wrap justify-center items-center">{rendering()}</div>
-      <div className="flex">
-        <ul className="flex">
-          <li>
-            <a href="" onClick={prevPage}>
-              Prev
-            </a>
-          </li>
-          <li className="flex mx-4">
-            {numbers.map((number, index) => (
-              <a className="rounded-md cursor-pointer py-2 px-4 bg-white mx-2 active:bg-slate-400 focus:bg-slate-400" key={index} onClick={() => changeCurrentPage(number)}>
-                {number}
+      {setCat === "" && (
+        <div className="flex">
+          <ul className="flex">
+            <li>
+              <a href="" onClick={prevPage}>
+                Prev
               </a>
-            ))}
-          </li>
-          <li>
-            <a href="#" onClick={nextPage}>
-              Next
-            </a>
-          </li>
-        </ul>
-      </div>
+            </li>
+            <li className="flex mx-4">
+              {numbers.map((number, index) => (
+                <a className="rounded-md cursor-pointer py-2 px-4 bg-white mx-2 active:bg-slate-400 focus:bg-slate-400" key={index} onClick={() => changeCurrentPage(number)}>
+                  {number}
+                </a>
+              ))}
+            </li>
+            <li>
+              <a href="#" onClick={nextPage}>
+                Next
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
